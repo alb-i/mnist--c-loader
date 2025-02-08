@@ -134,7 +134,9 @@ _STATIC int mnist_load(
 	*data = (mnist_data *)malloc(sizeof(mnist_data) * image_cnt);
 
 	for (i = 0; i < image_cnt; ++i) {
+#ifdef MNIST_DOUBLE
 		int j;
+#endif
 		unsigned char read_data[28 * 28];
 		mnist_data *d = &(*data)[i];
 
